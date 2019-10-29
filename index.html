@@ -15,7 +15,7 @@
 	<!--	<script src='script/eosjs-jssig.js'></script>-->
 	<script src='layer/layer.js'></script>
 	<!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="./static/element.css">
 <!-- 引入组件库 -->
 	<!--	<script src="scatter/scatterjs-core.min.js"></script>-->
 	<!--	<script src="scatter/scatterjs-plugin-eosjs.min.js"></script>-->
@@ -227,15 +227,47 @@
 							    {{item.content}}
 							  </el-tab-pane>
 							</el-tabs> -->
-
+			
 							<div class="expc-investment">
 								<div class="tab-header">
-									<span v-for="(item,index) in ret.rows" @click="tabFun(index)" :class="{'active':activeIndex}" >
-										<b v-if="item.title == 'round 1'">第一轮 售无</b>
-										<b v-if="item.title == 'round 2'">第二轮</b>
-										<b v-if="item.title == 'round 3'">第三轮</b>
-										<b v-if="item.title == 'round 4'">第四轮</b>
+									<span v-for="(item,index) in ret.rows" @click="tabFun(index)" :class="{'active':activeIndex == index}" >
+										<b v-if="item.title == 'round 1'">
+											<b v-if="item.current_quantity > 0">{{languageCon.round1}}</b>
+											<b v-if="item.current_quantity == 0">{{languageCon.sell}}</b>
+										</b>
+										<b v-if="item.title == 'round 2'">{{languageCon.round2}}</b>
+										<b v-if="item.title == 'round 3'">{{languageCon.round3}}</b>
+										<b v-if="item.title == 'round 4'">{{languageCon.round4}}</b>
 									</span>
+								</div>
+								<div v-for="(item,index) in ret.rows" @click="tabFun(index)" v-show="activeIndex == index">
+									
+									<div class="tab-conent">
+										<div>
+											<br>
+											<p style="color: #3996f4;">{{item.current_quantity}} BATC</p>
+										</div>
+
+										<div>
+											<br>
+										<p style="color: #db3019;">{{item.start_price_usdt}} USDT</p>
+										</div>
+
+
+									</div>
+									<div class="tab-conent">
+										<div>
+											<p>{{languageCon.residual}}</p>
+											<br><br> 
+											<p>{{ languageCon.start_time }}{{item.start_time}}</p>
+										</div>
+										<div>
+											<p>{{languageCon.price}}</p>
+											<br><br> 
+											<p>{{ languageCon.end_time }}{{item.end_time}}</p>
+										</div>
+										
+									</div>
 								</div>
 							</div>
 
@@ -247,7 +279,8 @@
 				<script type="text/javascript" src="./static/vue.min.js"></script>
 				<script type="text/javascript" src="./static/echarts.min.js"></script>
 				<script type="text/javascript" src="./static/vue.data.js"></script>
-				<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+				<!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+				<script src="./static/element.js"></script>
 				<script type="text/javascript" src="./static/eos.js"></script>
 				<script>
 

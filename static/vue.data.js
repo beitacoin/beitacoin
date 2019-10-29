@@ -75,7 +75,12 @@ var vm = new Vue({
                 news2_con:'BATC全球玩家，BATC登录交易所的开盘价格确定为 1 USDT',
                 news1_time:'2019-09-22',
                 news2_time:'2019-09-22',
-                sell:'售<br><br>罄',
+                sell:'售罄',
+                round1:'第一轮',
+                round2:'第二轮',
+                round3:'第三轮',
+                round4:'第四轮',
+
             },
             English: {
                 sell:'Sell<br><br>out ',
@@ -151,7 +156,11 @@ var vm = new Vue({
                 announcementList1Title:'Title',
                 announcementList1Time:'2019-09-09',
                 announcementList1Content:'Content',
-                
+                sell:'null',
+                round1:'round1',
+                round2:'round1',
+                round3:'round1',
+                round4:'round1',
                 
             }
         },
@@ -183,7 +192,7 @@ var vm = new Vue({
         rpc:new eosjs_jsonrpc.JsonRpc('https://eos.greymass.com'),
         rpc2:new eosjs_jsonrpc.JsonRpc('https://eos.greymass.com'),
         ret:[],
-        activeIndex:1,
+        activeIndex:0,
     },
     methods: {
         languageTab(language){
@@ -216,7 +225,7 @@ var vm = new Vue({
                         table: 'rounds1',
                         scope: this.contract_scope,
                     })
-console.log(this.ret.rows)
+                    console.log(this.ret.rows)
 
                 } catch (e) {
                     console.log(e);
@@ -224,6 +233,9 @@ console.log(this.ret.rows)
             })();
         },
         handleTabsEdit(){},
+        tabFun(index){
+            this.activeIndex = index
+        }
 
     },
     mounted: function () {

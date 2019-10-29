@@ -526,3 +526,41 @@ body {
 .title img {
 	width: 140px;
 }
+.tab-header {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid #16296a;
+}
+.tab-header span {
+	margin: 0 10px;
+	padding: 10px;
+	display: inline-block;
+	/*width: 25%;*/
+	box-sizing: border-box;
+
+}
+
+.tab-header span.active {
+	color: #3c83f6;
+	border-bottom: 1px solid #3c83f6;
+}
+.tab-conent {
+	width: 100%;
+	
+	display: flex;
+	justify-content: center;
+
+}
+.tab-conent.active {
+	
+}
+.tab-conent div {
+	width: 50%;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+}
+
+
+
+
