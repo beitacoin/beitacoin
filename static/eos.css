@@ -67,12 +67,15 @@ body {
 	font-size: 10px;
 }
 .expc-echart .expc-echart-left {
-	width: 30%;
+	text-align: right;
+    width: calc(50% - 68px);
+
     float: left;
     position: absolute;
-    left: 14px;
+    left: 24px;
     font-size: 10px;
     color: #8affc1;
+    box-sizing: border-box;
     margin-top: 12px;
 }
 .expc-echart .expc-echart-left .top img {
@@ -124,22 +127,26 @@ body {
 	
 }
 .expc-echart .expc-echart-right {
-	width: 30%;
-	    text-align: right;
-    /*float: left;*/
-    right: -14px;
+	width: 50%;
+    text-align: left;
+    /* float: left; */
+    left: 50%;
     top: 0;
+    margin-left: 64px;
     position: absolute;
-    /*left: 14px;*/
+    /* left: 14px; */
     color: #96fc6a;
     font-size: 10px;
-    
     margin-top: 12px;
+}
+.expc-echart .expc-echart-right .top {
+	padding-left: 30px;
 }
 .expc-echart-left {
 	position: relative;
 }
 .expc-echart-left .top {
+	    padding-right: 34px;
 	display: inline-block;
 	width: 100%;
 	position: absolute;
@@ -148,7 +155,7 @@ body {
 .expc-echart .expc-echart-right .top img {
 	    position: absolute;
     width: 100px;
-    right: 0;
+    left: 0;
     margin-top: 20px;
 }
 .expc-echart .expc-echart-right .top:nth-of-type(2){
