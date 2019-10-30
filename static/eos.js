@@ -5,8 +5,8 @@ var username;
 var users_limit=10000000;
 let pre = document.getElementsByTagName('pre')[0];
 
-var static_price=4765974;
-var static_node=9;
+var static_price=0;
+var static_node=0;
 
 // var contract_code='';
 // var contract_scope='';
@@ -14,8 +14,8 @@ var static_node=9;
 // var chainId='e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473';
 // const rpc = new eosjs_jsonrpc.JsonRpc('https://jungle2.cryptolions.io');
 // const rpc2 = new eosjs_jsonrpc.JsonRpc('https://jungle2.cryptolions.io');
-var contract_code='expcorg12345';
-var contract_scope='expcorg12345';
+var contract_code='batcbatcbatc';
+var contract_scope='batcbatcbatc';
 var contract_currency='BATC';
 var chainId='aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
 const rpc = new eosjs_jsonrpc.JsonRpc('https://eos.greymass.com');
