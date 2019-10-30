@@ -976,7 +976,7 @@ function investment(data){
 white_paper();
 function white_paper() {
     var isLanguage= localStorage.getItem("isLanguage");
-    var pdf = location.protocol +'//'+ location.host+'/pdf/EosExpc'+ isLanguage +'.pdf';
+    var pdf = location.protocol +'//'+ location.host+'/pdf/BATC_'+ isLanguage +'.pdf';
     $("#white_paper").attr('href',pdf);
 }
 
