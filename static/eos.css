@@ -127,7 +127,7 @@ body {
 	
 }
 .expc-echart .expc-echart-right {
-	width: 50%;
+	width: calc(50% - 64px);
     text-align: left;
     /* float: left; */
     left: 50%;
