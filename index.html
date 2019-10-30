@@ -262,10 +262,8 @@
 
 										<div>
 											<br>
-										<p style="color: #db3019;">{{item.start_price_usdt}} USDT</p>
+										<p style="color: #db3019;" ><b v-html="tofix(item.start_price_usdt)"></b> USDT</p>
 										</div>
-
-
 									</div>
 									<div class="tab-conent">
 										<div>
@@ -275,7 +273,7 @@
 										</div>
 										<div>
 											<p>{{languageCon.price}}</p>
-											<br><br> 
+											<br><br>
 											<p>{{ languageCon.end_time }}<br>{{item.end_time}}</p>
 										</div>
 										

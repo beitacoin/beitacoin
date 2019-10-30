@@ -233,11 +233,17 @@ var vm = new Vue({
                         scope: this.contract_scope,
                     })
                     console.log(this.ret.rows)
+                    
 
                 } catch (e) {
                     console.log(e);
                 }
             })();
+        },
+        tofix(obj){
+            console.log(obj)
+            return obj.substring(0,obj.indexOf(".")+5);
+            
         },
         handleTabsEdit(){},
         tabFun(index){
