@@ -192,7 +192,7 @@ var vm = new Vue({
         rpc:new eosjs_jsonrpc.JsonRpc('https://eos.greymass.com'),
         rpc2:new eosjs_jsonrpc.JsonRpc('https://eos.greymass.com'),
         ret:[],
-        activeIndex:0,
+        activeIndex:1,
     },
     methods: {
         languageTab(language){
