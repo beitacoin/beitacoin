@@ -1,7 +1,7 @@
 var vm = new Vue({
     el: '#app',
     watch:{
-       
+
     },
     data: {
         language:{
@@ -277,46 +277,31 @@ var vm = new Vue({
                 }
             })();
         },
-        // rounds2(){
-
-        //         async () => {
-        //             try {
-        //                 this.ret2Data = await this.rpc2.get_table_rows({
-        //                     code: this.contract_code,
-        //                     table: 'expcinfo2',
-        //                     scope: this.contract_scope,
-        //                 })
-
-        //                 // expcinfo2_data(ret2);
-        //                 console.log(this.ret2Data,"aaaa________aaaa")
-        //                 // getTableRows(ret);
-
-        //             } catch (e) {
-        //                 console.log(e);
-        //                 console.log(this.ret2Data,"aaaa________aaaa")
-        //             }
-        //         }
-            
-        // },
+       
         tofix(obj){
             // console.log(obj)
             return obj.substring(0,obj.indexOf(".")+3);
             
         },
+        substr(src){
+            return src.substring(0,10)
+        },
+
         handleTabsEdit(){},
         tabFun(index){
             this.activeIndex = index
-        }
+        },
 
-    },
-    mounted: function () {
-        if (this.languageBlooen == "Chinese") {
-            this.languageCon = this.language.Chinese
-        } else if(this.languageBlooen == "English") {
-            this.languageCon = this.language.English
-        }
-        this.rounds1()
-        // this.rounds2()
+
+},
+mounted: function () {
+    if (this.languageBlooen == "Chinese") {
+        this.languageCon = this.language.Chinese
+    } else if(this.languageBlooen == "English") {
+        this.languageCon = this.language.English
+    }
+    this.rounds1()
+        
     },
 });
 function reload_fun(){

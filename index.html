@@ -276,12 +276,12 @@
 										<div>
 											<p>{{languageCon.residual}}</p>
 											<br><br> 
-											<p>{{ languageCon.start_time }}<br>{{item.start_time}}</p>
+											<p>{{ languageCon.start_time }}<br> <b v-html="substr(item.start_time)"></b></p>
 										</div>
 										<div>
 											<p>{{languageCon.price}}</p>
 											<br><br>
-											<p>{{ languageCon.end_time }}<br>{{item.end_time}}</p>
+											<p>{{ languageCon.end_time }}<br> <b v-html="substr(item.end_time)"></b></p>
 										</div>
 										
 									</div>
