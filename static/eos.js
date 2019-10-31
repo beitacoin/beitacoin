@@ -520,12 +520,12 @@ function expcinfo2() {
         try {
             const ret2 = await rpc2.get_table_rows({
                 code: contract_code,
-                table: 'expcinfo2',
+                table: 'batcinfo',
                 scope: contract_scope,
             })
 
             expcinfo2_data(ret2);
-            // console.log(ret2,"sdsd")
+
             // getTableRows(ret);
 
         } catch (e) {
@@ -535,6 +535,7 @@ function expcinfo2() {
 }
 
 function expcinfo2_data(data){
+    console.log(data,"data")
     var today_price_eos, next_price_eos, total_mining, total_reward;
     today_price_eos=data['rows'][0]['today_price_eos'];
     next_price_eos=data['rows'][0]['next_price_eos'];

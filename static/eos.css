@@ -522,6 +522,10 @@ body {
 .right .icon-round {
 	margin-left: 10px;
 	margin-right: 0;
+	float: right;
+}
+.right .dredged {
+	float: right;
 }
 .dredged {
 	display: inline-block;

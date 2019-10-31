@@ -209,7 +209,8 @@ var vm = new Vue({
             hour:'',
             minute:'',
             second:'',
-        }
+        },
+        ret2Data:[],
     },
     methods: {
         languageTab(language){
@@ -242,13 +243,11 @@ var vm = new Vue({
                         table: 'rounds1',
                         scope: this.contract_scope,
                     })
-                    console.log(this.ret.rows)
+                    // console.log(this.ret.rows)
                     for (let i = this.ret.rows.length - 1; i >= 0; i--) {
                         if (this.ret.rows[i].current_quantity > 0) {
                             this.countdown = this.ret.rows[i].end_time
                         }
-
-                        document.getElementById("timeLast").innerHTML = day
                     }
                     let timestemp = new Date(this.countdown).getTime();
                     setInterval(function(){
@@ -259,17 +258,15 @@ var vm = new Vue({
                         let hour = Math.floor( (s - day*24*3600) / 3600); 
                         let minute = Math.floor( (s - day*24*3600 - hour*3600) /60 ); 
                         let second = parseInt(s - day*24*3600 - hour*3600 - minute*60)
-                        let str = day
+                        
                         document.getElementById("timeDay").innerHTML = day
                         document.getElementById("timeHour").innerHTML = hour
                         document.getElementById("timeMinute").innerHTML = minute
                         document.getElementById("timeSecond").innerHTML = second
 
-                        
 
                         
                     },1000)
-
                     // console.log(this.countdown,"countdown")
                     
                     // console.log(timestemp); 
@@ -280,10 +277,30 @@ var vm = new Vue({
                 }
             })();
         },
-        
+        // rounds2(){
+
+        //         async () => {
+        //             try {
+        //                 this.ret2Data = await this.rpc2.get_table_rows({
+        //                     code: this.contract_code,
+        //                     table: 'expcinfo2',
+        //                     scope: this.contract_scope,
+        //                 })
+
+        //                 // expcinfo2_data(ret2);
+        //                 console.log(this.ret2Data,"aaaa________aaaa")
+        //                 // getTableRows(ret);
+
+        //             } catch (e) {
+        //                 console.log(e);
+        //                 console.log(this.ret2Data,"aaaa________aaaa")
+        //             }
+        //         }
+            
+        // },
         tofix(obj){
             // console.log(obj)
-            return obj.substring(0,obj.indexOf(".")+5);
+            return obj.substring(0,obj.indexOf(".")+3);
             
         },
         handleTabsEdit(){},
@@ -299,6 +316,7 @@ var vm = new Vue({
             this.languageCon = this.language.English
         }
         this.rounds1()
+        // this.rounds2()
     },
 });
 function reload_fun(){
