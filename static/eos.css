@@ -489,11 +489,11 @@ body {
 	margin: 0 0 40px;
 	font-family: "ZhenyanGB";
 }
-#SecondToDate {
+#SecondToDate2 {
 
 }
 
-#SecondToDate span {
+#SecondToDate2 span {
 	display: inline-block;
 	width: 65px;
 	height: 65px;
@@ -503,7 +503,7 @@ body {
 	font-family: "Helvetica Neue";
 	font-size: 30px;
 }
-#SecondToDate span img {
+#SecondToDate2 span img {
 	width: 65px;
 	position: absolute;
 	left: 0;

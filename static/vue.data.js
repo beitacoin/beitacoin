@@ -1,5 +1,8 @@
 var vm = new Vue({
     el: '#app',
+    watch:{
+       
+    },
     data: {
         language:{
             Chinese: {
@@ -200,6 +203,13 @@ var vm = new Vue({
         rpc2:new eosjs_jsonrpc.JsonRpc('https://eos.greymass.com'),
         ret:[],
         activeIndex:0,
+        countdown:'',
+        timeYYMMHH:{
+            day:'',
+            hour:'',
+            minute:'',
+            second:'',
+        }
     },
     methods: {
         languageTab(language){
@@ -233,6 +243,36 @@ var vm = new Vue({
                         scope: this.contract_scope,
                     })
                     console.log(this.ret.rows)
+                    for (let i = this.ret.rows.length - 1; i >= 0; i--) {
+                        if (this.ret.rows[i].current_quantity > 0) {
+                            this.countdown = this.ret.rows[i].end_time
+                        }
+
+                        document.getElementById("timeLast").innerHTML = day
+                    }
+                    let timestemp = new Date(this.countdown).getTime();
+                    setInterval(function(){
+                        let days = new Date().getTime()
+                        let s = (timestemp-days)/1000
+
+                        let day = Math.floor( s/ (24*3600) ); // Math.floor()向下取整 
+                        let hour = Math.floor( (s - day*24*3600) / 3600); 
+                        let minute = Math.floor( (s - day*24*3600 - hour*3600) /60 ); 
+                        let second = parseInt(s - day*24*3600 - hour*3600 - minute*60)
+                        let str = day
+                        document.getElementById("timeDay").innerHTML = day
+                        document.getElementById("timeHour").innerHTML = hour
+                        document.getElementById("timeMinute").innerHTML = minute
+                        document.getElementById("timeSecond").innerHTML = second
+
+                        
+
+                        
+                    },1000)
+
+                    // console.log(this.countdown,"countdown")
+                    
+                    // console.log(timestemp); 
                     
 
                 } catch (e) {
@@ -240,8 +280,9 @@ var vm = new Vue({
                 }
             })();
         },
+        
         tofix(obj){
-            console.log(obj)
+            // console.log(obj)
             return obj.substring(0,obj.indexOf(".")+5);
             
         },

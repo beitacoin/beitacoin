@@ -874,7 +874,8 @@ function timeFormat(d) {
     return [year,month,date].join('-');
 }
 function getTimestamp(d) {
-    return new Date(d).getTime() / 1000;
+    var Time = new Date(d);
+    return Time.getTime() / 1000;
 }
 function currTimestamp() {
     return Date.parse(new Date()) / 1000;
@@ -891,12 +892,14 @@ function time_show_down(){
     var currtime_stamp=currTimestamp();
     var end_time_stamp=getSession('end_time_stamp');
     var time=(end_time_stamp-currtime_stamp);
-    // console.log(time);
+
+    // console.log(time,"time",end_time_stamp,"end_time_stamp",currtime_stamp,"currtime_stamp");
     // var str=vm.languageCon.count_down + transTime(time);
     var str=transTime(time);
     $("#SecondToDate").html(str);
 }
 function transTime(timestamp) {
+    // console.log(timestamp)
     var result = "";
     if (timestamp >= 86400) {
         $days = Math.floor(timestamp / 86400);
